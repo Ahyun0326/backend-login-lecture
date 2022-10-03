@@ -12,6 +12,8 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 app.engine('ejs', require('ejs').__express)
 
+//미들 웨어 등록
+app.use(express.static(`${__dirname}/src/public`));   //현재 디렉터리 app.js 경로 가져와서 /src/public 아래에 있는 정적 경로를 추가
 app.use("/", home);  //use : 미들 웨어 등록해주는 메소드
                      //루트 경로로 오면 홈으로 이동
 
