@@ -5,10 +5,10 @@ const express = require("express");
 const app = express();
 
 //라우팅
-const home = require("./routes/home");  //index.js를 home에 저장
+const home = require("./src/routes/home");  //index.js를 home에 저장
 
 //앱 세팅
-app.set("views", "./views");
+app.set("views", "./src/views");
 app.set("view engine", "ejs");
 app.engine('ejs', require('ejs').__express)
 
