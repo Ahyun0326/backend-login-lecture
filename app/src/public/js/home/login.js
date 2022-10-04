@@ -15,4 +15,14 @@ function login(){
         psword : psword.value,
     };
     console.log(req);
+    console.log(JSON.stringify(req));
+
+    fetch("/login", {
+        method : "POST",
+        //이러한 타입으로 JSON 데이터를 전송하겠다.
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req),
+    })
 }
