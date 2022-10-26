@@ -14,8 +14,8 @@ function login(){
         id : id.value,
         psword : psword.value,
     };
-    console.log(req);
-    console.log(JSON.stringify(req));
+    //console.log(req);
+    //console.log(JSON.stringify(req));
 
     fetch("/login", {
         method : "POST",
@@ -25,4 +25,12 @@ function login(){
         },
         body: JSON.stringify(req),
     })
+     .then((res) => res.json())
+     .then((res) => {
+        if(res.success){
+            location.href="/";
+        } else{
+            alert(res.msg);
+        }
+    });
 }
