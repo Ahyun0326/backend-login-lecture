@@ -9,12 +9,18 @@ const id = document.querySelector("#id"),    //태그 내 id가 id인 것과 id�
 registerBtn.addEventListener("click", register);
 
 function register(){
+    //아이디 입력 여부 확인
+    if(!id.value)   return alert("아이디를 입력해주십시오.");
+
+    //비밀번호 일치 확인
+    if(psword.value !== confirmPsword.value)
+        return alert("비밀번호가 일치하지 않습니다.");
+
     //console.log(id.value);  //태그의 값을 가져와 console 창에 출력
-    //아이디와 비밀번호 가져와 객체 형태로 저장
+    //아이디와 비밀번호, 이름 가져와 객체 형태로 저장
     const req = {
         id : id.value,
         name : name.value,
-        confirmPsword : confirmPsword.value,        
         psword : psword.value,
     };
     //console.log(req); 값이 잘 담겼는지 확인
