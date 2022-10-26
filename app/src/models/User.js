@@ -8,10 +8,10 @@ class User{
         this.body = body;
     }
 
-    login(){
+    async login(){
         const client = this.body;
         //console.log(id, psword);
-        const {id, psword} = UserStorage.getUserInfo(client.id);
+       const {id, psword} = await UserStorage.getUserInfo(client.id);
         //console.log(a);
         
         //저장소에 저장된 아이디와 클라이언트가 입력한 client id가 같고
