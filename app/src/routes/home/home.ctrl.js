@@ -10,6 +10,10 @@ const output = {
     login : (req, res) =>{
         res.render("home/login");
     },
+    register : (req, res) => {
+        //클라이언트의 요청이 들어오면 register 화면 응답
+        res.render("home/register");
+    }
 }
 
 const users = {
