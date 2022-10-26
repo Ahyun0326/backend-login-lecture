@@ -27,11 +27,15 @@ class User{
         return {success:false, msg: "존재하지 않는 아이디입니다."};
     }
 
-    register(){
+    async register(){
         const client = this.body;
         //save 메소드 호출을 통해 회원가입한 유저 데이터 저장
-        const response = UserStorage.save(client);
-        return response;
+        try{
+         const response = await UserStorage.save(client);
+         return response;
+        }catch(err){
+            return {success : false, msg:err};
+        }
     }
 }
 module.exports = User;
